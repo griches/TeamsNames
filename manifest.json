@@ -14,6 +14,8 @@
         "https://teams.live.com/*",
         "https://teams.cloud.microsoft/*",
         "https://teams.microsoft.com.mcas.ms/*",
+        "https://outlook.office.com/*",
+        "https://outlook.office365.com/*",
         "https://*.mcas.ms/*"
       ],
       "js": ["content.js"],
