@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Teams Name Tidy",
+  "version": "1.0.0",
+  "description": "Reformats Microsoft Teams names from 'Lastname, Firstname (Platform)' to 'Firstname Lastname'.",
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://teams.microsoft.com/*",
+        "https://teams.live.com/*",
+        "https://teams.cloud.microsoft/*",
+        "https://teams.microsoft.com.mcas.ms/*",
+        "https://*.mcas.ms/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
