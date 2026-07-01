@@ -1,6 +1,6 @@
 # Teams Name Tidy
 
-A Chromium (Edge/Chrome) browser extension that reformats Microsoft names from `Lastname, Firstname (Platform)` to `Firstname Lastname`, in both **Microsoft Teams** and **Outlook on the web**.
+A Chromium (Edge/Chrome) browser extension that reformats Microsoft Teams names from `Lastname, Firstname (Platform)` to `Firstname Lastname`.
 
 Example: `Doe, Jane (Example Platform)` → `Jane Doe`
 
@@ -9,14 +9,13 @@ Example: `Doe, Jane (Example Platform)` → `Jane Doe`
 1. Open `edge://extensions` (Edge) or `chrome://extensions` (Chrome).
 2. Turn on **Developer mode**.
 3. Click **Load unpacked** and select this `TeamsNames` folder.
-4. Open Teams web (`teams.microsoft.com`) or Outlook web (`outlook.office.com`) — names are tidied automatically.
+4. Open Teams web (`teams.microsoft.com`) — names are tidied automatically.
 
 ## Where it runs
 
 Configured in `manifest.json`:
 
 - Teams: `teams.microsoft.com`, `teams.live.com`, `teams.cloud.microsoft`
-- Outlook web: `outlook.office.com`, `outlook.office365.com`
 - MCAS proxy variants (`*.mcas.ms`, `teams.microsoft.com.mcas.ms`)
 
 ## Files
