@@ -2,7 +2,10 @@
 
 A Chromium (Edge/Chrome) browser extension that reformats Microsoft Teams names from `Lastname, Firstname (Platform)` to `Firstname Lastname`.
 
-Example: `Doe, Jane (Example Platform)` → `Jane Doe`
+Examples:
+
+- `Doe, Jane (Example Platform)` → `Jane Doe`
+- `Doe, Jane, +3` (group chat) → `Jane Doe, +3`
 
 ## Install (unpacked)
 
@@ -27,6 +30,8 @@ Configured in `manifest.json`:
 ## Notes
 
 - Drops the trailing platform/group and reorders to `First Last`.
+- Preserves group-chat member counts, keeping `, +N` as a suffix
+  (e.g. `Doe, Jane, +3` → `Jane Doe, +3`).
 - Rewrites both visible text and `aria-label` / `title` attributes.
 - Leaves non-name labels (e.g. team names) untouched.
 - Skips text you're editing (contentEditable) and transient UI such as
