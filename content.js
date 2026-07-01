@@ -1,4 +1,5 @@
-const NAME_RE = /^\s*([^,()]+?),\s+([^,()]+?)(?:\s*\([^]*\)?)?\s*$/;
+// Last, First (Platform) — with an optional trailing group count like ", +3".
+const NAME_RE = /^\s*([^,()]+?),\s+([^,()]+?)(?:\s*\([^]*\)?)?(,\s*\+\d+)?\s*$/;
 // Transient/React-controlled UI we must never rewrite (it re-renders and loops).
 const SKIP_SEL = '[role="listbox"],[role="menu"],[role="combobox"],[role="dialog"]';
 
@@ -7,8 +8,9 @@ function tidy(name) {
   if (!m) return null;
   const last = m[1].trim();
   const first = m[2].trim();
+  const extra = m[3] || "";
   if (!first || !last) return null;
-  return first + " " + last;
+  return first + " " + last + extra;
 }
 
 function skip(el) {
