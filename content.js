@@ -10,6 +10,9 @@ function tidy(name) {
   const first = m[2].trim();
   const extra = m[3] || "";
   if (!first || !last) return null;
+  // Idempotency: our own "First Last, +N" output would otherwise re-match with
+  // "+N" parsed as the first name, re-flipping to "+N First Last". Skip that.
+  if (/^\+\d+$/.test(first)) return null;
   return first + " " + last + extra;
 }
 
